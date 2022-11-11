@@ -21,7 +21,7 @@ jobs:
         - run: 
             name: Deploy heroku
             command: | 
-                set -X  
+                set -x 
                 HEROKU_API_KEY =${HEROKU_API_KEY} heroku container:login
                 HEROKU_API_KEY =${HEROKU_API_KEY} heroku container:push -a web-api21hcb
                 HEROKU_API_KEY =${HEROKU_API_KEY} heroku container:release -a web-api21hcb
