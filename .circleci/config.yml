@@ -8,6 +8,9 @@ orbs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build-and-push:
+    enviroment: 
+        DOCKER_IMAGE: tinhphanvan0493/test-circleci
+        DOCKER_TAG: latest
     executor: docker/docker
     steps:
       - setup_remote_docker
@@ -16,12 +19,12 @@ jobs:
             docker-username: DOCKER_USERNAME
             docker-password: DOCKER_PASSWORD
       - docker/build:
-            image: tinhphanvan0493/test-circleci
-            tag: v2
+            image: $DOCKER_IMAGE
+            tag: $DOCKER_TAG
       - docker/push:
             digest-path: /tmp/digest.txt
-            image: tinhphanvan0493/test-circleci
-            tag: v2
+            image: $DOCKER_IMAGE
+            tag: $DOCKER_TAG
       - run:
             command: |
                 docker login -u "${!DOCKER_USERNAME}" --password-stdin "$DOCKER_PASSWORD"
