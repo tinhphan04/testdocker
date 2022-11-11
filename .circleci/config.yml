@@ -27,11 +27,7 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  commit:
+  workflows:
+  test_my_app:
     jobs:
-      - build-and-push:
-        context: testing
-          filters:
-            branches:
-              only: 
-                - develop
+      - build-and-push
