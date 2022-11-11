@@ -22,7 +22,7 @@ jobs:
             image: test-circleci/docker-cci
       - run:
             command: |
-                docker login -u "$Docker_User" -p "$Docker_password"
+                echo "$DOCKERHUB_PASSWORD" | docker login --username $Docker_User --password-stdin
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
