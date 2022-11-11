@@ -8,7 +8,7 @@ orbs:
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build-and-push:
-    enviroment: 
+    environment: 
         DOCKER_IMAGE: tinhphanvan0493/test-circleci
         DOCKER_TAG: latest
     executor: docker/docker
