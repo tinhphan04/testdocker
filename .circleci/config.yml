@@ -22,9 +22,9 @@ jobs:
             name: Deploy heroku
             command: | 
                 set -x 
-                HEROKU_API_KEY =${HEROKU_API_KEY} heroku container:login
-                HEROKU_API_KEY =${HEROKU_API_KEY} heroku container:push -a web-api21hcb
-                HEROKU_API_KEY =${HEROKU_API_KEY} heroku container:release -a web-api21hcb
+                HEROKU_API_KEY =${HEROKU_PASS} heroku container:login
+                HEROKU_API_KEY =${HEROKU_PASS} heroku container:push -a web-api21hcb
+                HEROKU_API_KEY =${HEROKU_PASS} heroku container:release -a web-api21hcb
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
