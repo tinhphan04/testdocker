@@ -17,12 +17,14 @@ jobs:
             docker-password: DOCKER_PASSWORD
       - docker/build:
             image: test-circleci/docker-cci
+            tag: v2
       - docker/push:
             digest-path: /tmp/digest.txt
             image: test-circleci/docker-cci
+            tag: v2
       - run:
             command: |
-                echo "${!DOCKER_PASSWORD}" | docker login -u "${!DOCKER_USERNAME}" --password-stdin "$DOCKER_PASSWORD"
+                docker login -u "${!DOCKER_USERNAME}" --password-stdin "$DOCKER_PASSWORD"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
