@@ -13,7 +13,7 @@ jobs:
         - checkout
         - run: 
             name: Testing
-            command: | echo "test"
+            command: echo "this is the test job"
   build-deploy:
     machine: true
     steps:
