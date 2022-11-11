@@ -16,11 +16,11 @@ jobs:
             docker-username: DOCKER_USERNAME
             docker-password: DOCKER_PASSWORD
       - docker/build:
-            image: test-circleci/docker-cci
+            image: tinhphanvan0493/test-circleci
             tag: v2
       - docker/push:
             digest-path: /tmp/digest.txt
-            image: test-circleci/docker-cci
+            image: tinhphanvan0493/test-circleci
             tag: v2
       - run:
             command: |
