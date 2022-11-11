@@ -12,17 +12,17 @@ jobs:
     steps:
       - setup_remote_docker
       - checkout
-      - docker/check
+      - docker/check:
             docker-username: Docker_User
             docker-password: Docker_password
       - docker/build:
-          image: test-circleci/docker-cci
+            image: test-circleci/docker-cci
       - docker/push:
-          digest-path: /tmp/digest.txt
-          image: test-circleci/docker-cci
+            digest-path: /tmp/digest.txt
+            image: test-circleci/docker-cci
       - run:
-          command: |
-            echo "Digest is: $(</tmp/digest.txt)"
+            command: |
+                echo "Digest is: $(</tmp/digest.txt)"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
