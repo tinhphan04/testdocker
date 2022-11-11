@@ -22,7 +22,7 @@ jobs:
             name: Deploy heroku
             command: | 
                 set -x 
-                HEROKU_API_KEY = ${HEROKU_API_KEY} heroku container:login
+                HEROKU_API_KEY=${HEROKU_PASS} heroku container:login
 # Invoke jobs via workflows
 #HEROKU_API_KEY = ${HEROKU_PASS} heroku container:push -a web-apiatest
                 #HEROKU_API_KEY = ${HEROKU_PASS} heroku container:release -a web-apiatest
