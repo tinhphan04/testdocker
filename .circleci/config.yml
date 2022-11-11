@@ -22,7 +22,7 @@ jobs:
             name: Deploy heroku
             command: | 
                 set -x 
-                heroku container:login
+                heroku container:login -u HEROKU_USERNAME -p HEROKU_PASS
                 heroku container:push -a web-api21hcb
                 heroku container:release -a web-api21hcb
 # Invoke jobs via workflows
