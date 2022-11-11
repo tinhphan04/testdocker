@@ -31,4 +31,8 @@ workflows:
     jobs:
       - node/test
       - build-and-push
+            filters:
+                branches:
+                    only:
+                       - master
       
