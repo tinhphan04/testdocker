@@ -27,7 +27,8 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  workflows:
   test_my_app:
     jobs:
+      - node/test
       - build-and-push
+      
