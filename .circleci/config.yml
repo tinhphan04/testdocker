@@ -29,4 +29,9 @@ jobs:
 workflows:
   commit:
     jobs:
-      - build-and-push
+      - build-and-push:
+        context: testing
+          filters:
+            branches:
+              only: 
+                - develop
