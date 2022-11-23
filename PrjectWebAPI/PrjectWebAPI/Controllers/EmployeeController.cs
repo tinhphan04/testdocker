@@ -5,6 +5,9 @@ using Service.Interfaces;
 
 namespace PrjectWebAPI.Controllers
 {
+    /// <summary>
+    /// test
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class EmployeeController : ControllerBase
